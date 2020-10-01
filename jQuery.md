@@ -5,9 +5,11 @@ jQuery is simply a DOM manipulation library.
 1. [Why not use jQuery](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#why-not-use-jquery)
 1. [Adding jQuery](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#adding-jquery)
 1. [jQuery Selectors](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#jquery-selectors)
+   - *Select Self & Parent*
 1. [Manipulating Style](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#manipulating-style)
 1. [Common jQuery Methods](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#common-jquery-methods)
 1. [jQuery Events](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#jquery-events)
+   - *Bubbling Up*
 1. [jQuery Effects](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#jquery-effects)
 ***
 ***
@@ -62,6 +64,14 @@ $(".sale");
 $("#bonus");
 // to select all a tags inside of li's,
 $("li a");
+```
+**Select Self & Parent**  
+In order to select self and the parent of a current element:
+```javascript
+// to select the current element in an event function,
+$(this);
+// to select the parent element of the current element,
+$(this).parent();
 ```
 ***
 
@@ -292,16 +302,24 @@ Here inside inside this *styling object* or *property* we must use the propertie
     console.log("Key press in an input!");
   });
   ```
-  > **`on()`** allows us to add listeners for all potential future elements on the contrary of `click()` which only adds listeners for existing elements when the page loads. That's why we will broadly use **`on("click", func)`** instead of `click()`!
+  > **`on()`** allows us to add listeners for all potential future elements on the contrary of `click()` which only adds listeners for existing elements when the page loads. That's why we will broadly use **`on("click", func)`** instead of `click()`!  
+
+**Bubbling Up**  
+When we for example click on a `span` in an `li` actually we are clicking on: `span - li - ul - div - body` respectively which called as ***bubbling up***. This may cause unwanted things to be triggered if not handled, so to handle this issue:
+```javascript
+$("span").click(function(e){
+  e.stopPropagation();
+});
+```
 ***
 
 ### [jQuery Effects](https://api.jquery.com/category/effects/)
 - [`.fadeOut()`](https://api.jquery.com/fadeOut/)  
   The `.fadeOut()` method animates the opacity of the matched elements.
   
-  > Once the opacity reaches 0, the `display` style property is set to `none`, so the element no longer affects the layout of the page!
+  > Once the opacity reaches 0, the `display` style property is set to `none`, so the element no longer affects the layout of the page! On the other hand we may not to keep those deleted elements on the page, in that case we can do the following:
 
-  > To completely remove the element(s) we can use `$(this).remove()` within the callback function of fadeOut!
+  > To completely remove the element(s) we can use `$(this).remove()` within the callback function of fadeOut! PS: If we use it directly insted using within the callback function, it will immediately disappear since it won't be waiting for that fadeOut to end.
 
   Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings *fast* and *slow* can be supplied to indicate durations of 200 and 600 milliseconds, respectively. If any other string is supplied, or if the duration parameter is omitted, the default duration of 400 milliseconds is used.
   ```javascript
