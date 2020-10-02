@@ -64,6 +64,8 @@ $(".sale");
 $("#bonus");
 // to select all a tags inside of li's,
 $("li a");
+// to select all input elements that has a type of 'text',
+$("input[type='text']");
 ```
 **Select Self & Parent**  
 In order to select self and the parent of a current element:
@@ -125,7 +127,7 @@ Here inside inside this *styling object* or *property* we must use the propertie
 ***
 
 ### [Common jQuery Methods](https://api.jquery.com/)
-- [`text()` - `text(val)`](https://api.jquery.com/text/)  
+- [`.text()` - `.text(val)`](https://api.jquery.com/text/)  
   Actually does the same thing as `.textContent`. It retrieves just the strings inside of an element and if we pass a value it will modify the content with it. This method is called as *HTML safe* and actually provides us a safe way while getting **input** from user!
   ```javascript
   //<h1>Grüß dich!</h1>
@@ -136,7 +138,7 @@ Here inside inside this *styling object* or *property* we must use the propertie
   "Servus!"
   ```
 
-- [`html()` - `html(val)`](https://api.jquery.com/html/)
+- [`.html()` - `.html(val)`](https://api.jquery.com/html/)
   Works in the same way with `.innerHTML` from DOM. It retrieves the content with HTML stuff included and again if we pass a value with HTML stuff it modifies the content accordingly:
   ```javascript
   //<h1>... <strong>keiner</strong> meiner Freunde ...</h1>
@@ -147,7 +149,7 @@ Here inside inside this *styling object* or *property* we must use the propertie
   "... keiner <em>meiner</em> Freunde ..."
   ```
 
-- [`attr(atr)` - `attr(atr, val)`](https://api.jquery.com/attr/)  
+- [`.attr(atr)` - `.attr(atr, val)`](https://api.jquery.com/attr/)  
   Gets the value of the specified attribute of the selected element if *atr* is given as only parameter:
   ```javascript
   // <a href="https://www.google.com">Take me to Google!</a>
@@ -174,7 +176,7 @@ Here inside inside this *styling object* or *property* we must use the propertie
   $("input").attr("type", "checkbox");
   ```
 
-- [`val()` - `val(val)`](https://api.jquery.com/val/)  
+- [`.val()` - `.val(val)`](https://api.jquery.com/val/)  
   Actually it's the wrapper for `.value()` in DOM. Thus it helps us extract the value from an input. On the other hand it is of course working with anything that has *value* attribute like dropdown menus etc.  
   If we don't put in an argument it returns us the value of the input we select:
   ```javascript
@@ -213,20 +215,30 @@ Here inside inside this *styling object* or *property* we must use the propertie
   $("input[type=radio][name=baz]:checked").val();
   ```
 
-- [`addClass()`](https://api.jquery.com/addClass/)   
+- [`.addClass()`](https://api.jquery.com/addClass/)   
   Equals to `.classList.add()` in DOM. Simpley adds class/classes to the selected object/objects:
   ```javascript
   $("li").addClass("style:hover darkened");
   ```
-- [`removeClass()`](https://api.jquery.com/removeClass/)  
+- [`.removeClass()`](https://api.jquery.com/removeClass/)  
   Equals to `.classList.remove()` in DOM. Simpley removes class/classes from the selected object/objects:
   ```javascript
   $("li").removeClass("light");
   ```
-- [`toggleClass()`] (https://api.jquery.com/toggleClass/)  
+- [`.toggleClass()`](https://api.jquery.com/toggleClass/)  
   Equals to `.classList.toggle()` in DOM. Simpley toggles class/classes of the selected object/objects:
   ```javascript
   $("li").toggleClass("selected");
+  ```
+- [`.append()`](https://api.jquery.com/append/)  
+  The `.append()` method inserts the specified content as the **last** child of each element in the jQuery collection. It appends the element with handling the `HTML` elements:
+  ```javascript
+  $("ul").append("<li>New Note</li>");
+  ```
+- [`.prepend()`](https://api.jquery.com/prepend/)  
+  The `.prepend()` method inserts the specified content as the **first** child of each element in the jQuery collection It appends the element with handling the `HTML` elements:
+  ```javascript
+  $("ul").prepend("<li>Prioritized Note</li>");
   ```
 ***
 
@@ -303,6 +315,16 @@ Here inside inside this *styling object* or *property* we must use the propertie
   });
   ```
   > **`on()`** allows us to add listeners for all potential future elements on the contrary of `click()` which only adds listeners for existing elements when the page loads. That's why we will broadly use **`on("click", func)`** instead of `click()`!  
+
+  To make this happen we need slight changes. Since the js file only loads and applies things at the start of a page, we need to specify the elements with the ones already exists on the page to be able to affect the future ones:
+  ```javascript
+  $("ul").on("click", "li", function(){
+    console.log("Feature successfully added!");
+  })
+  ```
+  > The code above selects ***all `li`s inside of a `ul`*** and applies `click` event onto them. It's not selecting the `ul` etc. even though it may seem like that! So we need to be aware of this especially when to refer to the object itself or its parent within the callback function!
+  
+  So the code above will successfully add the *click* event to dynamically added `li`s.
 
 **Bubbling Up**  
 When we for example click on a `span` in an `li` actually we are clicking on: `span - li - ul - div - body` respectively which called as ***bubbling up***. This may cause unwanted things to be triggered if not handled, so to handle this issue:
