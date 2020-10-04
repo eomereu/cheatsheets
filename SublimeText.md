@@ -10,4 +10,4 @@
 
 - Typing `lorem` and hitting Tab right after it, is going to give a long text to us, automatically.
 
-- **Ctrl + L** selects the current line
+- **Ctrl + L** selects the current line 
