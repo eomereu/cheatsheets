@@ -69,7 +69,7 @@ rgba(100,82,12,.3): More transparency (as getting closer to 0)
 ***
 
 ### Properties
-**background**
+[**background**](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
 ```css
 background: rgb(255,255,255); /* full color */
 background: url(https://badasshelmetstore.com/wp-content/uploads/2016/10/avengers-helmets.jpg); /* image */
@@ -82,7 +82,7 @@ background-repeat: no-repeat; /* If we don't want the image to be repeated as ab
 background-size: cover; /* If we don't use this property the page won't cover the page. It won't strecth out or won't fit depending on the resolution; if we don't use this */ 
 ```
 
-**border**  
+[**border**](https://developer.mozilla.org/en-US/docs/Web/CSS/border)  
 Normally we use border with 3 must-have properties:
 1. width
 1. style
@@ -93,11 +93,13 @@ So the original code looks like this:
 border-width: 3px;
 border-style: solid;
 border-color: white;
+```
 But we use the following in terms of being practical:
+```css
 border: 3px solid white; /* widht style color respectively */
 ```
 
-**text-transform**  
+[**text-transform**](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)  
 Transforms the selected text into wanted style:
 ```css
 label {
@@ -105,8 +107,130 @@ label {
 }
 /* some other options: lowercase, capitalize...*/
 ```
-***
 
+[**font-family**](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)  
+Decides the font type. Type name must be between quotes if it starts with numbers.
+```css
+h1 {
+  font-family: Arial;
+}
+```
+
+[**font-size**](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)  
+Here 'em' is dynamically changing and multiplying the text that it belongs to, according to the one level outer text of the current text
+```css
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 2.0em;
+}
+```
+
+[**font-weight**](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)  
+Decides how bold/light text will be. Some of the font types let you use it with a range of 100-800 (not every value but every hundred value) other than normal, bold etc.
+```css
+p {
+  font-weight: 800;
+}
+h2 {
+  font-weight: bold;
+}
+```
+
+[**text-align**](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)  
+Specifies the alignment
+```css
+h1 {
+  text-align: center;
+}
+```
+
+[**text-decoration**](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration)  
+Used to give text underline effect, linethrough effect etc.
+```css
+p {
+  text-decoration: line-through;
+}
+```
+
+[**max-width**](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)  
+Specifies the max width to be shown as window shrinkes. It makes sense to use it with a percentage width.
+```css
+max-width: 800px;
+width: 80%;
+```
+
+[**transition**](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)  
+Following code segment provides a transition effect by any changes on the related element. Last two lines ensure the compatibility with various browsers.
+```css
+transition: all 0.3s;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+```
+If we want the transition effect just for a specific change then we type that attribute instead of 'all' keyword,
+```css
+transition: background 0.5s;
+```
+
+[**letter-spacing**](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing)  
+Letter spacing -btw- specifies the space between letters
+```css
+letter-spacing: 0.2rem;
+```
+
+[**line-height**](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height)  
+Specifies the height of a line.
+```css
+li {
+  height: 40px;
+  line-height: 40px;
+}
+```
+Also we can use it by multiplying the default line spacing value which is determined by the font
+```css
+p {
+  line-height: 2;
+}
+```
+
+[**list-style**](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style)  
+Modifies the list specifier (dot as default)
+```css
+ul {
+  list-style: none;
+}
+```
+
+[**box-shadow**](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)  
+Adds shadow to box *(offset-x | offset-y | blur-radius | color)*
+```css
+#container {
+  box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+}
+```
+
+[**box-sizing**](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)  
+Sets how the total width and height of an element is calculated.
+```css
+input {
+  box-sizing: border-box;
+}
+```
+
+[**border-radius**](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)  
+Rounds the corners of an element's outer border edge. We can set a single radius to make circular corners, or two radii to make elliptical corners.
+```css
+#square1 {
+  border-radius: 30px;
+  /* or */
+  border-radius: 10%;
+  /* or */
+  border-radius: 25% 10%; /* rounds corners differently */
+}
+```
+***
 
 ### CSS Selectors
 1. Element
@@ -312,5 +436,102 @@ input:checked
 ```css
 #hello {
 
+}
+```
+
+### Box Model
+In a document, each element is represented as a rectangular box. In CSS, each of these rectangular boxes is described using the standart box model.  
+Each box has four edges:
+1. **Margin**  
+The space outside the box; kinda within the elements.
+```css
+margin: 20px; /* Same space from all sides */
+margin-top: 40px;
+margin: TOP RIGHT BOTTOM LEFT; /* More specified space from any side */
+margin: 0 auto 0 auto; /* Centers the element from left and right edges */
+margin: 0 auto; /* Specifies top to 0 px & right to auto, so indirectly fully centering from right and left again */
+```
+
+2. **Border**  
+```css
+The thickness of the box.
+border: 2px solid blue;
+border-width: 2px;
+border-style: solid;
+border-color: blue;
+```
+
+3. **Padding**  
+The space between border and the content inside of it.
+```css
+padding: 10px;
+padding-left: 20px;
+```
+
+4. **Content**  
+The text itself (width & hight).
+```css
+width: 20px;
+width: 60%;
+```
+
+The space on the right of the content comes from the number 4, which is content edge -width- but the space on the left comes from number 3, which is padding edge -padding-left-. On the other hand, padding has also right spacing, which means we have two adjustments for the right side of our content.
+
+We can use a percentage on the width to make the website more dynamic and change itself depending on the body (window) size,
+```css
+p {
+  width: 50%;
+}
+```
+***
+
+### Other Stuff
+- [Google Fonts](fonts.google.com)  
+
+- [Font Awesome](https://fontawesome.com/)
+
+- An element can have multiple classes at once,
+	<td class="vertical horizontal"></td>
+	So this td is in also vertical class and also horizontal class.
+
+- Normally each div and div-like elements go on different lines, that's because what's defined as default as float property. If we change it as the following, all divs will float from left to right to bottom:
+	div {
+		float: left
+	}
+	When we don't modify float property, by default HTML has one space between adjacent images; but when we modify it, that's gone.
+
+- It may be more beneficial to have just one h1 -which is the main and the only one- on the page and having the other headings -which are multiple- as h2.
+
+- 'rem' adjusts the text size not according to the size of the parent element like 'em' but according to the root element; which means we don't have to worry about one changing the other,
+```css
+	letter-spacing: 0.2rem;
+```
+
+### Some Useful Stylings
+```css
+font-weight: normal;
+font-weight: 700;
+text-transform: uppercase;
+line-height: 1.1;
+letter-spacing: 1px;
+height: 100%;
+.button {
+  border: none; /*cancels the borders (of a button)*/
+  outline: none; /*deactivates the outline effect when clicked on a button*/
+  background: none; /*deactivates the built-in white background of buttons*/
+  font-size: inherit; /*inherits the font-size from its surrounding element*/
+}
+button:hover {
+  color: white;
+  background: steelblue;
+}
+.square {
+  border-radius: 10%; /*rounds a square's corners of a square*/
+  float: left; /*allows to place realted divs next to each other rather than one at a line*/
+  width: 30%; /*sets an exact width to the element*/
+}
+#message {
+  display: inline-block;
+  width: 20%;
 }
 ```
