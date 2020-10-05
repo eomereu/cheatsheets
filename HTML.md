@@ -31,6 +31,8 @@ MDN Element Reference: Lists [all the elements of HTML](https://developer.mozill
 
 - `<br>` tag is a break line tag, which passes you to the next line
 
+- `<hr>` tag adds a horizontal line on the page. No closing tags etc.
+
 - We don't need a closing tag for `<img>`, `<br>` attributes.
 
 - `<!-- This is a comment -->`
@@ -108,6 +110,11 @@ The *placeholder* atr is the default text inside a box
 
 - `<input type="checkbox">`  
 	A checkbox is the box which we can make a tick or not like selecting our skills, multiple or none
+
+- To load the checkboxes as checked while loading the page, we add 'checked' ATR in the input tag of the checkbox,
+```html
+	<input type="checkbox" checked>Fertig!
+```
 ***
 
 ### Label Tag
