@@ -44,6 +44,15 @@ MDN Element Reference: Lists [all the elements of HTML](https://developer.mozill
 - First headings, then outer lists, then inner lists
 
 - Inside an html file, typing `lorem` and hitting Tab right after it, is going to give a long text to us, automatically.
+
+- To simply overwrite the styles, we can create a 'style' section in the head of our HTML file,
+  ```html
+  <style type="text/css">
+    .btn-success {
+      background-color: blue;
+    }
+  </style>
+	```
 ***
 
 ### Attributes
@@ -99,7 +108,7 @@ By default if we don't specify the URL part it is the current location. If we do
 ***
 
 ### Input Tag
-- `<input>`  
+**`<input>`**  
 It creates interactive controls.  
 The *type* atr determines the types of input.  
 	`<input type="text/date/color/file/checkbox/password/radio/...">`  
@@ -108,17 +117,17 @@ The *name* atr specifies the key of the current input in the querystring.
 The *placeholder* atr is the default text inside a box  
 	`<input name="username" type="username" placeholder="username">`
 
-- `<input type="checkbox">`  
-	A checkbox is the box which we can make a tick or not like selecting our skills, multiple or none
+**`<input type="checkbox">`**  
+A checkbox is the box which we can make a tick or not like selecting our skills, multiple or none
 
-- To load the checkboxes as checked while loading the page, we add 'checked' ATR in the input tag of the checkbox,
+To load the checkboxes as checked while loading the page, we add 'checked' ATR in the input tag of the checkbox,
 ```html
-	<input type="checkbox" checked>Fertig!
+<input type="checkbox" checked>Fertig!
 ```
 ***
 
 ### Label Tag
-- `<label></label>`  
+`<label></label>`  
 We put `<input>` tags into this to give them a label and make them more comprehensive:
 ```html
 <label>
@@ -146,7 +155,7 @@ Regarding radio boxes, actually we can select more than one in radio button but 
 ***
 
 ### Button Tag
-- `<button></button>`  
+`<button></button>`  
   A button at the end of a form will simply submit the form:
 ```html
 <button class="favorite styled"
@@ -159,9 +168,9 @@ Regarding radio boxes, actually we can select more than one in radio button but 
 ### Select Tag
 With this tag we can create a nice dropdown selection menu. Usage:
 ```html
-	<select name="color">
-		<option>Red</option>
-	</select>
+<select name="color">
+  <option>Red</option>
+</select>
 ```
 Here because we didn't specify a value, it will automatically set the value in the query to the string on the option which is "Red" here. But sometimes we may want to specify it explicitly, to do so:
 ```html
