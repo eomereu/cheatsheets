@@ -4,34 +4,34 @@ They are actually seperate files that we include into our HTML files.
 
 ### General Stuff
 - The general rule that every line we write will follow:
-```css
-selector {
-  property: value;
-  anotherProperty: value;
-}
-```
+  ```css
+  selector {
+    property: value;
+    anotherProperty: value;
+  }
+  ```
 
 - *Inline styling* is not a good idea because it doesn't seperate HTML and CSS files. Furthermore it's a lot of work to form lots of things all one at a time and especially when we want to make some changes to multiple elements,
-```html
-<h3 style="color: pink;">My Heading</h3>
-```
+  ```html
+  <h3 style="color: pink;">My Heading</h3>
+  ```
 
 - *Style Tag* is also a bad idea, -on the other hand generally used for quick demonstrations and checks- coz it's also included in the HTML file but as a seperate part on top in 'head' part; which is mainly allows us to write some CSS code inside this tag,
-```html
-<style type="text/css">
-  .
-  .
-  .
-</style>
-```
+  ```html
+  <style type="text/css">
+    .
+    .
+    .
+  </style>
+  ```
 
 - `/* Comment in CSS */`
 
 - So finally to write our CSS in a different file, we use <link> tag inside the HTML file. Hitting tab after typing 'link' will create a nicely prepared tag for us.,
-```html
-	<link rel="stylesheet" type="text/css" href="CSSFileName.css">
-```
-> It must be included in the 'head' section! 
+  ```html
+  <link rel="stylesheet" type="text/css" href="CSSFileName.css">
+  ```
+  > It must be included in the 'head' section! 
 
 
 ### Color System
@@ -44,28 +44,28 @@ Actually the former two refer to the same thing but have differences in both syn
 
 - Hexadecimal colours contain six digits following a `#`. It's using base 16.  
 	`#_ _ _ _ _ _ `: First 2 represents how much red is the colour and the others green, blue respectively.  
-```css
-#FFFFFF : White  
-#000000 : Black
-```
+  ```css
+  #FFFFFF : White  
+  #000000 : Black
+  ```
 
 - RGB colours have slight different showing style. It's using base 10, the values show red, green, blue
-```css
-rgb(_, _, _)
-/*  r  g  b  */
-rgb(255,255,255): White
-rgb(0,0,0): Black
-```
+  ```css
+  rgb(_, _, _)
+  /*  r  g  b  */
+  rgb(255,255,255): White
+  rgb(0,0,0): Black
+  ```
 
 - RGBA system adds a fourth field as transparency value whose range is between 0 and 1, (A stands for Alpha)
-```css
-rgba(_, _, _, ._)
-/*   r 	g  b   t   */
-rgba(100,82,12,1): No transparency
-rgba(100,82,12,0): Fully transparent (nothing shows up)
-rgba(100,82,12,.6): Little transparency (as getting closer to 1)
-rgba(100,82,12,.3): More transparency (as getting closer to 0)
-```
+  ```css
+  rgba(_, _, _, ._)
+  /*   r 	g  b   t   */
+  rgba(100,82,12,1): No transparency
+  rgba(100,82,12,0): Fully transparent (nothing shows up)
+  rgba(100,82,12,.6): Little transparency (as getting closer to 1)
+  rgba(100,82,12,.3): More transparency (as getting closer to 0)
+  ```
 ***
 
 ### Properties
@@ -230,6 +230,15 @@ Rounds the corners of an element's outer border edge. We can set a single radius
   border-radius: 25% 10%; /* rounds corners differently */
 }
 ```
+
+[**outline**](https://developer.mozilla.org/en-US/docs/Web/CSS/outline)  
+Sets all the outline properties in a single declaration.
+```css
+input:focus {
+  border: 3px solid #2980b9;
+  outline: none;
+}
+```
 ***
 
 ### CSS Selectors
@@ -247,7 +256,7 @@ Rounds the corners of an element's outer border edge. We can set a single radius
     1. :visited
     1. ::first-letter
     1. :focus
-  
+ 
 1.**Element**  
 Selects all instances of a given element.
 ```css
@@ -403,92 +412,90 @@ And here 'Specifity' moves in. It is multiple stylings targeting one element; ju
 At this point when we inspect element on a page and look at the styles, we will see that those defeated inherited styles are overlined! And these are showed from bottom to top as more general to more specific one.
 
 ### Specificity Order
-From least to most specific:
+From least to most specific:  
 1. Type Selectors
-```css
-li {
+    ```css
+    li {}
+    li a {}
+    h4 + ul {}
+    ```
+2. Class, Attribute & Pseudo-Class Selectors  
+    ```css
+    .hallo {
 
-}
+    }
+    input[type="text"] {
 
-li a {
+    }
+    a[href="http://www.google.com"] {
 
-}
-
-h4 + ul {
-
-}
-```
-2. Class, Attribute & Pseudo-Class Selectors
-```css
-.hallo {
-
-}
-input[type="text"] {
-
-}
-a[href="http://www.google.com"] {
-
-}
-a:hover
-input:checked
-```
+    }
+    a:hover
+    input:checked
+    ```
 3. ID Selectors
-```css
-#hello {
+    ```css
+    #hello {
 
-}
-```
+    }
+    ```
 
 ### Box Model
 In a document, each element is represented as a rectangular box. In CSS, each of these rectangular boxes is described using the standart box model.  
 Each box has four edges:
 1. **Margin**  
 The space outside the box; kinda within the elements.
-```css
-margin: 20px; /* Same space from all sides */
-margin-top: 40px;
-margin: TOP RIGHT BOTTOM LEFT; /* More specified space from any side */
-margin: 0 auto 0 auto; /* Centers the element from left and right edges */
-margin: 0 auto; /* Specifies top to 0 px & right to auto, so indirectly fully centering from right and left again */
-```
+    ```css
+    margin: 20px; /* Same space from all sides */
+    margin-top: 40px;
+    margin: TOP RIGHT BOTTOM LEFT; /* More specified space from any side */
+    margin: 0 auto 0 auto; /* Centers the element from left and right edges */
+    margin: 0 auto; /* Specifies top to 0 px & right to auto, so indirectly fully centering from right and left again */
+    ```
 
 2. **Border**  
-```css
-The thickness of the box.
-border: 2px solid blue;
-border-width: 2px;
-border-style: solid;
-border-color: blue;
-```
+    ```css
+    The thickness of the box.
+    border: 2px solid blue;
+    border-width: 2px;
+    border-style: solid;
+    border-color: blue;
+    ```
 
 3. **Padding**  
 The space between border and the content inside of it.
-```css
-padding: 10px;
-padding-left: 20px;
-```
+    ```css
+    padding: 10px;
+    padding-left: 20px;
+    ```
 
 4. **Content**  
 The text itself (width & hight).
-```css
-width: 20px;
-width: 60%;
-```
+    ```css
+    width: 20px;
+    width: 60%;
+    ```
 
-The space on the right of the content comes from the number 4, which is content edge -width- but the space on the left comes from number 3, which is padding edge -padding-left-. On the other hand, padding has also right spacing, which means we have two adjustments for the right side of our content.
+    The space on the right of the content comes from the number 4, which is content edge -width- but the space on the left comes from number 3, which is padding edge -padding-left-. On the other hand, padding has also right spacing, which means we have two adjustments for the right side of our content.
 
-We can use a percentage on the width to make the website more dynamic and change itself depending on the body (window) size,
-```css
-p {
-  width: 50%;
-}
-```
+    We can use a percentage on the width to make the website more dynamic and change itself depending on the body (window) size,
+    ```css
+    p {
+      width: 50%;
+    }
+    ```
 ***
 
 ### Other Stuff
 - [Google Fonts](fonts.google.com)  
 
 - [Font Awesome](https://fontawesome.com/)
+
+- [uiGradients](https://uigradients.com/#FacebookMessenger)
+
+- There are 2 ways of ordering CSS styling within the CSS file:
+  1. Ordering based on the element order on the page from top to bottom...
+  1. Ordering based on the specificity from the least to the most... ***(more popular)***
 
 - An element can have multiple classes at once,
 	<td class="vertical horizontal"></td>
@@ -503,9 +510,25 @@ p {
 - It may be more beneficial to have just one h1 -which is the main and the only one- on the page and having the other headings -which are multiple- as h2.
 
 - 'rem' adjusts the text size not according to the size of the parent element like 'em' but according to the root element; which means we don't have to worry about one changing the other,
-```css
-	letter-spacing: 0.2rem;
-```
+  ```css
+    letter-spacing: 0.2rem;
+  ```
+
+- To make *placeholders* in inputs italic, simplty add the following code to CSS file:
+  ```css
+  ::-webkit-input-placeholder {
+    font-style: italic;
+  }
+  :-moz-placeholder {
+    font-style: italic;  
+  }
+  ::-moz-placeholder {
+    font-style: italic;  
+  }
+  :-ms-input-placeholder {  
+    font-style: italic; 
+  }
+  ```
 
 ### Some Useful Stylings
 ```css
@@ -515,23 +538,63 @@ text-transform: uppercase;
 line-height: 1.1;
 letter-spacing: 1px;
 height: 100%;
+
 .button {
   border: none; /*cancels the borders (of a button)*/
   outline: none; /*deactivates the outline effect when clicked on a button*/
   background: none; /*deactivates the built-in white background of buttons*/
   font-size: inherit; /*inherits the font-size from its surrounding element*/
 }
+
 button:hover {
   color: white;
   background: steelblue;
 }
+
 .square {
   border-radius: 10%; /*rounds a square's corners of a square*/
   float: left; /*allows to place realted divs next to each other rather than one at a line*/
   width: 30%; /*sets an exact width to the element*/
 }
+
 #message {
   display: inline-block;
   width: 20%;
 }
+
+body {
+  background-image: url();
+  background-size: cover;
+  background-position: center;
+}
+
+/*In order to make the background image cover all the file:*/
+html {
+  height: 100%;
+}
+
+/*An awesome shadow that contributes depth to the texts on the page,*/
+text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+              0px 8px 13px rgba(0,0,0,0.1),
+              0px 18px 23px rgba(0,0,0,0.1);
+text-shadow: offset-x offset-y radius color;
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow*/
+
+/*To fix the appearance of the `<hr>` on mobile devices, add `max-width: 90%;` to the `hr` selector,*/
+hr {
+  width: 400px;
+  max-width: 99%;
+}
+
+/* To solve the white space bug along the image places. This bug can be fixed by adding a class to the div with class of row, name it flex, then make a css rule like so:*/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* To push an icon to the right: */
+.fa-plus-circle {
+  float: right;
+}
+
 ```
