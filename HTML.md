@@ -116,6 +116,7 @@ The *name* atr specifies the key of the current input in the querystring.
 	`<input name="username" type="username">`  
 The *placeholder* atr is the default text inside a box  
 	`<input name="username" type="username" placeholder="username">`
+> To make a *placeholer* italic, please check *CSS cheat sheet*.
 
 **`<input type="checkbox">`**  
 A checkbox is the box which we can make a tick or not like selecting our skills, multiple or none
