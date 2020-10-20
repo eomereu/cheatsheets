@@ -9,7 +9,6 @@ jQuery is simply a DOM manipulation library.
 1. [Manipulating Style](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#manipulating-style)
 1. [Common jQuery Methods](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#common-jquery-methods)
 1. [jQuery Events](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#jquery-events)
-   - *Bubbling Up*
 1. [jQuery Effects](https://github.com/eomereu/cheatsheets/blob/master/jQuery.md#jquery-effects)
 ***
 ***
@@ -326,13 +325,13 @@ Here inside inside this *styling object* or *property* we must use the propertie
   
   So the code above will successfully add the *click* event to dynamically added `li`s.
 
-**Bubbling Up**  
-When we for example click on a `span` in an `li` actually we are clicking on: `span - li - ul - div - body` respectively which called as ***bubbling up***. This may cause unwanted things to be triggered if not handled, so to handle this issue:
-```javascript
-$("span").click(function(e){
-  e.stopPropagation();
-});
-```
+- [`event.stopPropagation()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)  
+  When we for example click on a `span` in an `li` actually we are clicking on: `span - li - ul - div - body` respectively which called as ***bubbling up***. This may cause unwanted things to be triggered if not handled, so to handle this issue:
+  ```javascript
+  $("span").click(function(e){
+    e.stopPropagation();
+  });
+  ```
 ***
 
 ### [jQuery Effects](https://api.jquery.com/category/effects/)
