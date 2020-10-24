@@ -10,4 +10,14 @@
 
 - Typing `lorem` and hitting Tab right after it, is going to give a long text to us, automatically.
 
-- **Ctrl + L** selects the current line 
+- **`Ctrl + L`** selects the current line 
+
+- To go to end and the beginning of a line in Sublime with "Alt+Right"/"Alt+Left"; paste the following into the Key Bindings within Preferences:
+```
+{ "keys": ["alt+left"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+{ "keys": ["alt+right"], "command": "move_to", "args": {"to": "eol", "extend": false} }
+```
+
+- **`Shit + Tab`** takes the selected lines 1 intend backwards.
+
+- **`Ctrl + D`** selects all the instances of a selected text one by one on each push within Sublime Text 3, which will implicitly duplicate the cursor. It's better to choose the text from beginning to end by letting the cursor be at the end not at on the front!
