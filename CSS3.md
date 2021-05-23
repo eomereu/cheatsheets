@@ -321,7 +321,7 @@ a[href="http://www.google.com"] {
 ```
 
 8.**Pseudo Selectors**  
-8.1.**:nth-of-type**  
+8.1.**`:nth-of-type`**  
 Selects nth element of every odd/even number of that element
 ```css
 li:nth-of-type(3){
@@ -333,7 +333,7 @@ li:nth-of-type(odd){
 }
 ```
 
-8.2.**:checked**  
+8.2.**`:checked`**  
 Selects all "checked" checkboxes
 ```css
 input:checked {
@@ -341,7 +341,7 @@ input:checked {
 }
 ```
 
-8.3.**:hover**  
+8.3.**`:hover`**  
 Lets us modify the element when it's hovered on
 ```css
 h1:hover {
@@ -349,7 +349,7 @@ h1:hover {
 }
 ```
 
-8.4.**:visited**
+8.4.**`:visited`**
 Lets us modify the element (link) when it's already visited:
 ```css
 a:visited {
@@ -358,7 +358,7 @@ a:visited {
 /* some other options: link, visited, hover, active...*/
 ```
 
-8.5.**::first-letter**  
+8.5.**`::first-letter`**  
 Selects the first letter of the element with id 'special'
 ```css
 #special::first-letter {
@@ -367,7 +367,7 @@ Selects the first letter of the element with id 'special'
 }
 ```
 
-8.6.**focus**  
+8.6.**`:focus`**  
 Lets us modify the element (input) when it's clicked on (focused)
 ```css
 input:focus {
