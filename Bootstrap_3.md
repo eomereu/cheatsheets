@@ -1,4 +1,5 @@
 ## Bootstrap 3
+### General
 Bootstrap is a really useful CSS and JavaScript library. It is a single CSS file and a single JavaScript file. Inside the CSS file there is a bunch of staff that we get for free.  
 Components are the bigger pieces.  
 We can either download it to our machine and work/load locally (just use link tag for this after moving the 'bootstrap.css' file to the work area) or we can include it online by using,
@@ -9,6 +10,16 @@ We can either download it to our machine and work/load locally (just use link ta
 - We can find any info and any choice of any element on the getbootstrap.com:  
 	https://getbootstrap.com/docs/3.3/css/  
 	https://getbootstrap.com/docs/3.3/components/
+
+- Following code creates a number only input box,
+    ```html
+    <input type="number" min="1" max="99"
+    ```
+
+- The `type="button"` ATR prevents button to refresh the page onclick,
+    ```html
+    <button type="button">Player Two</button>
+    ```
 ***
 
 ### [Jumbotron](https://getbootstrap.com/docs/3.3/components/#jumbotron)

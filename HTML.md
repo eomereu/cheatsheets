@@ -1,5 +1,4 @@
 ## HTML5
-
 ### [MDN: Mozilla Developer Network](https://developer.mozilla.org/en-US/)
 MDN Element Reference: Lists [all the elements of HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) around 100 or so but 15-20 of'em frequently used...
 ***
@@ -96,7 +95,7 @@ We need to make my link explicit at this point. So we have to add that `http://`
 ***
 
 ### HTML Forms - Getting Input
-### Form Tag
+#### **Form Tag**
 - `<form></form>`  
 It's a shell/container for inputs like username, mail, password, log in button, dropdown menus, radio buttons etc. So by just forming a *form* we don't actually create something visual, all buttons etc. must be written explicitly in this for something visual.  
 
@@ -105,17 +104,22 @@ The following attribute pair sends data from the form to a server somewhere. Act
 `<form action="/my-form-submitting-page" method="post"> ALL THE INPUT </form>`
 ```
 By default if we don't specify the URL part it is the current location. If we don't specify the method it's a 'get' request by default.
-***
 
-### Input Tag
+#### **Input Tag**
 **`<input>`**  
 It creates interactive controls.  
-The *type* atr determines the types of input.  
-	`<input type="text/date/color/file/checkbox/password/radio/...">`  
-The *name* atr specifies the key of the current input in the querystring.  
-	`<input name="username" type="username">`  
-The *placeholder* atr is the default text inside a box  
-	`<input name="username" type="username" placeholder="username">`
+The `type` atr determines the types of input,
+```html
+<input type="text/date/color/file/checkbox/password/radio/...">
+```
+The `name` atr specifies the key of the current input in the querystring,
+```html
+<input name="username" type="username">
+```
+The `placeholder` atr is the default text inside a box  
+```html
+<input name="username" type="username" placeholder="username">
+```
 > To make a *placeholer* italic, please check *CSS cheat sheet*.
 
 **`<input type="checkbox">`**  
@@ -125,9 +129,8 @@ To load the checkboxes as checked while loading the page, we add 'checked' ATR i
 ```html
 <input type="checkbox" checked>Fertig!
 ```
-***
 
-### Label Tag
+#### **Label Tag**
 `<label></label>`  
 We put `<input>` tags into this to give them a label and make them more comprehensive:
 ```html
@@ -145,17 +148,15 @@ In order to add some validation, we can first use to check the presence of some 
 ```html
 <input id="email" name="email" type="email" placeholder="email" required>
 ```
-***
 
-### Radio Boxes
+#### **Radio Boxes**
 Regarding radio boxes, actually we can select more than one in radio button but cannot unselect it so we have to arrange it manually to make exactly one choice, to do this we give the choices the same "name"!, but here we must also specify the "value" of the choice for a better info sending and a better query; Used in things like gender selection etc. (Don't forget to add Labels)
 ```html
 <input id="male" name="gender" type="radio" value="male">
 <input id="female" name="gender" type="radio" value="female">
 ```
-***
 
-### Button Tag
+#### **Button Tag**
 `<button></button>`  
   A button at the end of a form will simply submit the form:
 ```html
@@ -164,9 +165,8 @@ Regarding radio boxes, actually we can select more than one in radio button but 
     Add to favorites
 </button>
 ```
-***
 
-### Select Tag
+#### **Select Tag**
 With this tag we can create a nice dropdown selection menu. Usage:
 ```html
 <select name="color">
@@ -180,9 +180,8 @@ Here because we didn't specify a value, it will automatically set the value in t
 </select>
 ```
 Now the value will be set to "Happy" in the query if we select ":)"
-***
 
-### Textarea Tag
+#### **Textarea Tag**
 This tag is used for inputs that are more than one line. *rows* & *cols* ATRs can be used to specify the size of the box:
 ```html
 <label for="story">Tell us your story:</label>
@@ -191,6 +190,7 @@ This tag is used for inputs that are more than one line. *rows* & *cols* ATRs ca
 It was a dark and stormy night...
 </textarea>
 ```
+***
 
 ### Pattern & Required Title ATRs
 ```html
@@ -202,3 +202,24 @@ But if we use the following,
 <input id="password" type="password" name="password" minlength="5" maxlength="10" required title="errorMsg">
 ```
 Here it restricts the input between 5 to 10. We cannot even type nor less than 5 neither more than 10 characters. And the title won't be showed up to the user.
+***
+
+### Other Stuff
+- To directly make CSS styling inside the HTML file we can add the following tags right after 'title'
+  ```html
+  <!-- CSS Directly Implemented -->
+  <style type="text/css">
+  .purple {
+    background-color: purple;
+  }
+  ```
+
+- Following code creates a number only input box,
+    ```html
+    <input type="number" min="1" max="99"
+    ```
+
+- The `type="button"` ATR prevents button to refresh the page onclick,
+    ```html
+    <button type="button">Player Two</button>
+    ```

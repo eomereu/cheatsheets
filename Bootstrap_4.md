@@ -20,6 +20,17 @@ https://getbootstrap.com/docs/4.5/components/jumbotron/
 https://getbootstrap.com/docs/4.5/components/navbar/
 https://getbootstrap.com/docs/4.5/layout/grid/
 
+- Following code creates a number only input box,
+    ```html
+    <input type="number" min="1" max="99"
+    ```
+
+- The `type="button"` ATR prevents button to refresh the page onclick,
+    ```html
+    <button type="button">Player Two</button>
+    ```
+***
+
 ### Changes from Bootstrap 3 to 4
 - No Glyphicons in Bootstrap 4,
 
@@ -53,6 +64,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
 - Text Colors,  
 	- https://getbootstrap.com/docs/4.5/utilities/colors/  
 	Colors are brighter now in Bootstrap 4 than 3 and also it has bg-color, bg-light etc.
+***
 
 ### [Typography between Bootstrap 3 and 4](https://getbootstrap.com/docs/4.5/content/typography/)
 - At this point there is a class type for heading called as '[display heading](https://getbootstrap.com/docs/4.5/content/typography/#display-headings)',

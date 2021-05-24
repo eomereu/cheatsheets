@@ -33,6 +33,38 @@ They are actually seperate files that we include into our HTML files.
   ```
   > It must be included in the 'head' section! 
 
+- To directly make CSS styling inside the HTML file we can add the following tags right after 'title'
+  ```html
+  <!-- CSS Directly Implemented -->
+  <style type="text/css">
+  .purple {
+    background-color: purple;
+  }
+  ```
+
+- Following attribute changes the opacity,
+  ```css
+  opacity: 0.5;
+  ```
+
+- ***Frontend*** In CSS:
+  ```css
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .container-class {
+    flex-grow: 1;
+  }
+  ```  
+  Within the code above:
+    - `display: flex` sets the display type to flex *(flexbox)*
+    - `flex-direction: column;` sets the direction as column *(it's row by default)*
+    - `vh` stands for *view height* and used to provide body to cover all seen height *i.e. to push the footer to the bottom*
+    - `flex-grow: 1;` makes the flex cover as needed area. *Here 1 sets as all*
+***
 
 ### Color System
 There are three types of color system:
