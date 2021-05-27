@@ -16,7 +16,8 @@ MDN Element Reference: Lists [all the elements of HTML](https://developer.mozill
 
 - `<p>` Paragraf tag makes the text block level
 
-- `<b>` tag is the basic way to bolden a text; this is inline also; but there is a better tag to do it which is `<strong>` tag. Although it does exactly the same thing it emphasizes the importance of it in the source code -as far as I guess- and things like these tags called 'semantic mark' in HTML5
+- `<b>` tag is the basic way to bolden a text; this is inline also; but there is a better tag to do it which is `<strong>` tag. Although it does exactly the same thing it emphasizes the importance of it in the source code.  
+  ***PS:** Things like these tags called ***semantic mark*** in HTML5*
 
 - `<i>` makes the text italic, it's inline; like the above one, `<em>` tag makes the same but a better way in terms of semantic marks
 
@@ -66,7 +67,7 @@ Is the one we all see in every Google search result actually, usage:
 ```html
 <a href="url">Link Text</a>
 ```
-We need to make my link explicit at this point. So we have to add that `http://` part at the beginning otherwise it tries to find that following part at our current folder!
+We need to make our link explicit at this point. So we have to add that `http://` part at the beginning otherwise it tries to find that following part at our current folder!
 ***
 
 ### Table
@@ -101,7 +102,7 @@ It's a shell/container for inputs like username, mail, password, log in button, 
 
 The following attribute pair sends data from the form to a server somewhere. Action atr contains the URL to send form data to and Method specifies the type of the HTTP request. We use *get* request when we try to retrieve some data like searching etc. and we use *post* request when we are sending data like wanting it to be added to a database or posted to a server. i.e. Google search is a get request; Facebook signup is a post request:  
 ```html
-`<form action="/my-form-submitting-page" method="post"> ALL THE INPUT </form>`
+<form action="/my-form-submitting-page" method="post"> ALL THE INPUT </form>
 ```
 By default if we don't specify the URL part it is the current location. If we don't specify the method it's a 'get' request by default.
 
@@ -120,7 +121,7 @@ The `placeholder` atr is the default text inside a box
 ```html
 <input name="username" type="username" placeholder="username">
 ```
-> To make a *placeholer* italic, please check *CSS cheat sheet*.
+> To make a *placeholder* italic, please check *CSS cheat sheet*.
 
 **`<input type="checkbox">`**  
 A checkbox is the box which we can make a tick or not like selecting our skills, multiple or none
@@ -139,7 +140,7 @@ We put `<input>` tags into this to give them a label and make them more comprehe
   <input name="username" type="username" placeholder="username">
 </label>
 ```
-An alternative and a better way to use `<label>` tag with `<input>` tags is as the following, by using *for* and *id* ATRs. By doing so we prevent nests:
+An alternative and a better way to use `<label>` tag with `<input>` tags is as the following, by using `for` and `id` ATRs. By doing so we prevent nests:
 ```html
 <label for="username">Username:</label>
 <input id="username" type="text" placeholder="username">
