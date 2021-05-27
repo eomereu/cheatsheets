@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Input</title>
+    <style type="text/css">
+      .input-field {
+        margin-bottom: 0.7rem;
+      }
+      #proc-btn {
+        padding: 0.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- version 0.1 -->
+      <!-- Lorem ipsum dolor sit amet. -->  
+      <h1>EOE CAR RENTAL</h1>
+      <img width="450px" src="https://lh3.googleusercontent.com/proxy/9PJ0RQ9D1u_Sk_ASLbUcxvsW6JgmssL8R4JSf4G9t4XDL-CyDkdfqyLgzbDt7EL6JIil1zr1RENivV7TrsQlJN5y9Kd_NlPqIbuvqmIHWggVrXIPqtHeU7Ldooc3OvC7OfjVJ5yFVfo9CbaYSIss_7tUvtQhGS8UcyKEX5t4lHJUhxCQB_7NjpqCJgIImuOaq424xnhUkg" alt="Audi A3">
+      <p>Please fill out the following form <em>in order to</em> proceed to <strong>car selection</strong> for your reservation.
+      Possible selections will be as below. <br><b><i>PS: Visit <a href="https://www.google.com/search?q=car+rental&oq=car+rental&aqs=chrome..69i57j0i402l2j0l7.1543j0j9&sourceid=chrome&ie=UTF-8">this link</a> for a google search.</i></b></p>
+      <ol>
+        <li>Audi</li>
+        <ul>
+          <li>A3</li>
+          <li>A4</li>
+        </ul>
+        <li>Volkswagen</li>
+        <ul>
+          <li>Golf</li>
+          <li>Passat</li>
+        </ul>
+      </ol>
+      <hr>
+    </div>
+    <div>
+      <p>Don't forget to have a peek on pick-up/drop places:</p>
+      <table border="1">
+        <thead>
+          <th>Pick-up</th>
+          <th>Drop</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flughafen</td>
+            <td>Altstadt</td>
+          </tr>
+          <tr>
+            <td>Hauptbahnhof</td>
+            <td>Flughafen</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+    </div>
+    <div>
+      <p>Form:</p>
+      <form action="/users" method="POST">
+        <div class="input-field">
+          <label for="username">Username:*</label>
+          <input type="text" name="username" id="username" placeholder="Username" pattern=".{3,21}" required>
+        </div>
+        <div class="input-field">
+          <label for="email">Email:*</label>
+          <input type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="input-field">
+          <label for="password">Password:*</label>
+          <input type="password" name="username" id="password" placeholder="Password" minlength="6" maxlength="15" required title="errorMsg">
+        </div>
+        <div class="input-field">
+          <label for="age">Age:</label>
+          <input type="number" name="age" id="age" min="1" max="99" required>
+        </div>
+        <div class="input-field">
+          <label for="file">Photo:</label>
+          <input type="file" name="file" id="file">
+        </div>
+        <div class="input-field">
+          <span>Gender:</span>
+          <input type="radio" name="gender" id="female">
+          <label for="female">Female</label>
+          <input type="radio" name="gender" id="male">
+          <label for="male">Male</label>
+        </div>
+        <div class="input-field">
+          <label for="color">Favorite Color:</label>
+          <input type="color" name="color" id="color">
+        </div>
+        <div class="input-field">
+          <label for="country">Country:</label>
+          <select name="country" id="country">
+            <option value="Austria">Austria</option>
+            <option value="Germany">Germany</option>
+            <option value="Turkey">Turkey</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <label for="date">Desired Booking Date:*</label>
+          <input type="date" name="date" id="date" required>
+        </div>
+        <div class="input-field">
+          <input type="checkbox" name="checkbox1" id="sub">
+          <label for="sub">I want to subscribe for news!</label>
+        </div>
+        <div class="input-field">
+          <input type="checkbox" name="human" id="human" checked>
+          <label for="human">I am a human.</label>
+        </div>
+        <div class="input-field">
+          <label for="explanation">About You:</label><br>
+          <textarea name="explanation" id="explanation" cols="40" rows="4" placeholder="Anything you want to add?"></textarea>
+        </div>
+        <div class="input-field">
+          <button type="button" id="proc-btn">Proceed</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
