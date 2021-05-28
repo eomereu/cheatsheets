@@ -40,6 +40,7 @@ They are actually seperate files that we include into our HTML files.
   .purple {
     background-color: purple;
   }
+  </style>
   ```
 
 - Following attribute changes the opacity,
@@ -75,7 +76,7 @@ There are three types of color system:
 Actually the former two refer to the same thing but have differences in both syntax and base selection.
 
 - Hexadecimal colours contain six digits following a `#`. It's using base 16.  
-	`#_ _ _ _ _ _ `: First 2 represents how much red is the colour and the others green, blue respectively.  
+	`#_ _ _ _ _ _ `: First 2 represents how much red the colour is and the others green and blue respectively.  
   ```css
   #FFFFFF : White  
   #000000 : Black
@@ -110,7 +111,7 @@ Alone this will replicate the image all along the page so be careful to pick a c
 
 Some background properties
 ```css
-background-repeat: no-repeat; /* If we don't want the image to be repeated as above we use this */
+background-repeat: no-repeat; /* If we don't want the image to be repeated as above, we use this */
 background-size: cover; /* If we don't use this property the page won't cover the page. It won't strecth out or won't fit depending on the resolution; if we don't use this */ 
 ```
 
@@ -126,7 +127,7 @@ border-width: 3px;
 border-style: solid;
 border-color: white;
 ```
-But we use the following in terms of being practical:
+But we can also use the following in terms of being practical:
 ```css
 border: 3px solid white; /* widht style color respectively */
 ```
@@ -141,12 +142,13 @@ label {
 ```
 
 [**font-family**](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)  
-Decides the font type. Type name must be between quotes if it starts with numbers.
+Decides the font type. 
 ```css
 h1 {
   font-family: Arial;
 }
 ```
+> *Type name must be between quotes if it starts with numbers.*
 
 [**font-size**](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)  
 Here 'em' is dynamically changing and multiplying the text that it belongs to, according to the one level outer text of the current text
@@ -252,7 +254,7 @@ input {
 ```
 
 [**border-radius**](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)  
-Rounds the corners of an element's outer border edge. We can set a single radius to make circular corners, or two radii to make elliptical corners.
+Rounds the corners of an element's outer border edge. We can set a single radius to make circular corners, or two radiuses to make elliptical corners.
 ```css
 #square1 {
   border-radius: 30px;
@@ -354,7 +356,7 @@ a[href="http://www.google.com"] {
 
 8.**Pseudo Selectors**  
 8.1.**`:nth-of-type`**  
-Selects nth element of every odd/even number of that element
+Selects nth element or every odd/even number of that element
 ```css
 li:nth-of-type(3){
   background: purple;
@@ -486,8 +488,8 @@ The space outside the box; kinda within the elements.
     ```
 
 2. **Border**  
+The thickness of the box.
     ```css
-    The thickness of the box.
     border: 2px solid blue;
     border-width: 2px;
     border-style: solid;
@@ -534,14 +536,16 @@ The text itself (width & hight).
 	So this td is in also vertical class and also horizontal class.
 
 - Normally each div and div-like elements go on different lines, that's because what's defined as default as float property. If we change it as the following, all divs will float from left to right to bottom:
-	div {
-		float: left
-	}
-	When we don't modify float property, by default HTML has one space between adjacent images; but when we modify it, that's gone.
+  ```css
+  div {
+    float: left
+  }
+  ```
+	When we don't modify `float` property, by default HTML has one space between adjacent images; but when we modify it, that's gone.
 
 - It may be more beneficial to have just one h1 -which is the main and the only one- on the page and having the other headings -which are multiple- as h2.
 
-- 'rem' adjusts the text size not according to the size of the parent element like 'em' but according to the root element; which means we don't have to worry about one changing the other,
+- `rem` adjusts the text size not according to the size of the parent element like 'em' but according to the root element; which means we don't have to worry about one changing the other,
   ```css
     letter-spacing: 0.2rem;
   ```
