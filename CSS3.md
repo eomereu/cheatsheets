@@ -545,7 +545,7 @@ The text itself (width & hight).
 
 - It may be more beneficial to have just one h1 -which is the main and the only one- on the page and having the other headings -which are multiple- as h2.
 
-- `rem` adjusts the text size not according to the size of the parent element like 'em' but according to the root element; which means we don't have to worry about one changing the other,
+- `rem` adjusts the text size not according to the size of the parent element like `em` but according to the root element; which means we don't have to worry about one changing the other,
   ```css
     letter-spacing: 0.2rem;
   ```
