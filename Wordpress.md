@@ -295,6 +295,10 @@ a.medium.cli-plugin-button cli-plugin-main-button.cli_settings_button {
   font-size: 12px;
 }
 ```
+
+### Contact Form 7 Captcha | By 247wd
+Gives us a shortcode for cpatcha verification to add into Contact Form 7 in order to prevent bots.  
+Tutorial video: *https://youtu.be/D8pmQRQnGbI*
 		
 ### \*\*\*Quick Restaurant Reservations | By ThingsForRestaurants
 For a reservation form and managing them, even for mailing
@@ -521,6 +525,9 @@ if (version_compare(WOOCOMMERCE_VERSION, '2.5.2', '>=')) {
 
 ### 404page - your smart custom 404 error page | By Peter Raschendorfer *(Appearance -> 404 Error Page)*
 To specify 404 Error Page
+
+### UpdraftPlus - Backup/Restore | By UpdraftPlus.Com, DavidAnderson *(Settings -> UpdraftPlus Backups)*
+To automatically create backups and restore them in Google Drive etc.
   
 ### \*\*Checkout Field Editor for WooCommerce | By ThemeHigh *(WooCommerce -> Checkout Form)*
 Enables us to edit, rearrange and add fields on/onto Checkout page. PS: Also can be used to add accepting AGB and Datenschutzerklärung checkboxes  
