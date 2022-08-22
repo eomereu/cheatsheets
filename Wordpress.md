@@ -416,6 +416,11 @@ To create a perfect looking menu within Elementor
 .food-title {
   width: 85%;
 }
+/* food titles in only Pizza Menu */
+/* PS: "pizza-menu" ID is set within Elementor */
+#pizza-menu .food-title {
+  max-width: 55%;
+}
 ```
 		
 ### Popup Maker | By Popup Maker
