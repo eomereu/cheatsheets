@@ -567,6 +567,9 @@ Helps to change all site's language in one click
 }
 /*__GTRANSLATE__END__*/
 ```
+
+### Easy Updates Manager | By Easy Updates Manager Team *(Dashboard -> Updates Options)*
+Helps to enable/disable all update options (Wordpress, Core, Theme, Plugins etc.)
   
 ## CSS Breakpoints
 ### Tablet
