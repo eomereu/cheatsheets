@@ -602,3 +602,138 @@ Helps to enable/disable all update options (Wordpress, Core, Theme, Plugins etc.
 ## Archive
 ### ALLERGENE
 A: Gluten - B: Krebstiere - C: Eier von Geflügel - D: Fisch - E: Erdnüsse - F: Sojabohnen - G: Milch von Säugetieren - H: Schalenfrüchte - L: Sellerie - M: Senf - N: Sesamsamen - O: Schwefeloxid und Sulfite - P: Lupinen - R: Weichtiere
+
+### Asgaros Forum Stylings
+#### Stylings of Shotcode on Homepage
+Designed to show topic names etc. only.  
+PS: `.home-right-forum` is the special class of the part which the shortcode is in on Homepage
+```css
+/* Home Forum */
+/* hiding unnecessary parts and the topics after 5th one */
+.home-right-forum .topic-poster,
+.home-right-forum .last-post-headline,
+.home-right-forum #forum-header,
+.home-right-forum .notices-panel,
+.home-right-forum .main-title-forum,
+.home-right-forum .pages-and-menu,
+.home-right-forum [class~='topic']:nth-child(n+6) /* this line hides q&a after specified number */,
+/*.home-right-forum small,*/
+.home-right-forum #forum-breadcrumbs,
+.home-right-forum #bottom-navigation,
+.home-right-forum .topic-status,
+.home-right-forum #read-unread,
+.home-right-forum .title-element {
+	display: none !important;
+}
+/* centering headline */
+.home-right-forum .title-element {
+	text-align: center;
+}
+/* repadding q&a titles */
+.home-right-forum .topic-name {
+	padding: 8px 16px 8px 16px !important;
+}
+/* adjusting height of q&as */
+.home-right-forum #af-wrapper .topic {
+	height: 50px !important;
+}
+
+@media screen and (max-width: 767px) {
+  /* Home Forum */
+  .home-right-forum [class~='topic']:nth-child(n+6) /* this line hides q&a after specified number */ {
+    display: table;
+  }
+  .home-right-forum [class~='topic']:nth-child(n+3) /* this line hides q&a after specified number */ {
+    display: none !important;
+  }
+}
+```
+#### Stylings Of Forum Itself
+```css
+/* FORUM */
+/* adjusting forum header colors */
+#forum-header {
+	background-color: white !important;
+	box-shadow: 0 0 1rem 0.1rem rgb(230 228 228);
+	margin-bottom: 5px !important;
+}
+#af-wrapper #forum-navigation a, #af-wrapper #forum-navigation-mobile a {
+	color: #494b51 !important;
+	border-left: 0px !important;
+}
+/* giving min-height to forum div */
+#main-forum-div {
+	min-height: 100vh;
+}
+/* hiding forum page title */
+.entry-header {
+	display: none;
+}
+/* hiding forum title */
+#main-forum-div .main-title-forum {
+	display: none !important;
+}
+/* getting rid of padding of forum */
+.post-8 {
+	padding: 0 !important;
+}
+/* adjusting border radius */
+#forum-header,
+#forum-search,
+#af-wrapper .button {
+	border-radius: 10px !important;
+}
+#af-wrapper .title-element {
+	border-radius: 10px 10px 0px 0px !important;
+}
+#af-wrapper .content-container {
+	border-radius: 0px 0px 10px 10px !important;
+}
+/* centering read/unread */
+#af-wrapper #read-unread {
+	display: flex !important;
+	justify-content: center;
+}
+/* making blackish q&as */
+#af-wrapper a {
+	color: rgb(73,75,81) !important;
+}
+/* adjusting the color of background of title */
+#af-wrapper .title-element {
+	background-color: #4175fc;
+	border-bottom: 0px !important;
+}
+/* deleting borders */
+#af-wrapper .topic {
+	border-bottom: 0px !important;
+}
+#af-wrapper .content-container {
+	border-style: none !important;
+}
+#af-wrapper .topic-poster {
+	border-left: 0px !important;
+}
+/* color adjusting */
+#af-wrapper .unread {
+	color: #4175fc;
+}
+#af-wrapper .title-element, 
+#af-wrapper .title-element span {
+	background-color: white;
+	color: #494b51;
+	font-size: 20px;
+	font-weight: 600;
+	font-style: noemal !important;
+	text-align: center;
+	margin-bottom: 15px;
+	letter-spacing: -1px;
+}
+/* adding back missing border */
+.first-post {
+  border-top: 1px solid #eee !important;
+}
+/* hiding unnecessary blank */
+#af-wrapper .pages-and-menu {
+	display: none !important;
+}
+```
