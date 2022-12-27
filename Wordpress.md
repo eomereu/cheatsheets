@@ -2,15 +2,76 @@
 ## Theme
 **Astra** is a perfect choice for a clean start.
 
+## Recent Plugins
+
+1. Starter Templates | By Brainstorm Force  
+Enables us to import pre-made, pages, blocks etc.
+
+1. UpdraftPlus - Backup/Restore | By UpdraftPlus.Com, DavidAnderson *(Settings -> UpdraftPlus Backups)*  
+To automatically create backups and restore them in Google Drive etc.
+   
+1. Yoast Duplicate Post | By Enrico Battocchi & Team Yoast  
+To clone Pages etc.
+
+1. CMP Maintenance Mode Plug-in
+
+1. Ultra Addons
+
+1. Premium Addons for Elementor
+
+1. MC4WP: Mailchimp for WordPress | By ibericode
+
+1. Forminator  
+    To add MC4WP Subscribe input field into forminator forms, we will edit its php file so that when we enter "mc4wp-subscribe" as a label for a checkbox, it will automatically add the given html element of Newsletter signup by MC4WP...
+    1. Go to `root > wp-content > plugins > forminator > library > fields`
+    1. Edit `multivalue.php`
+    1. Go to line `240`
+    1. Wrap the following part into the `else` section of the if which we will create in the next step
+        ```php
+        $html .= sprintf(
+              '<input type="checkbox" name="%s" value="%s" id="%s" data-calculation="%s" %s />',
+              $name,
+              $value,
+              $input_id,
+              $calculation_value,
+              $selected
+            );
+        ```
+    1. If statement:
+        ```php
+        if ( $label === 'mc4wp-subscribe' ) {
+				$html .= sprintf(
+					'<input type="checkbox" name="mc4wp-subscribe" value="1" id="%s" %s />',
+					$input_id,
+					$selected
+				);
+			} else {
+				$html .= sprintf(
+					'<input type="checkbox" name="%s" value="%s" id="%s" data-calculation="%s" %s />',
+					$name,
+					$value,
+					$input_id,
+					$calculation_value,
+					$selected
+				);
+			}
+        ```
+    1. By doing so, Forminator will detect our label, and create the input checkbox that we (MC4WP Plugin) desire...
+    1. Lastly we need to hide the label *(Assume that we have given `register-form-newsletter` class to the Checkbox during creation in Forminator)*
+        ```css
+        .register-form-newsletter h4 {
+          display: none !important;
+        }
+        ```
+
+1. \*\*Checkout Field Editor for WooCommerce | By ThemeHigh *(WooCommerce -> Checkout Form)*  
+Enables us to edit, rearrange and add fields on/onto Checkout page. PS: Also can be used to add accepting AGB and Datenschutzerklärung checkboxes  
+*i.e.* `Ich akzeptiere <a href="/privacy-policy/">Datenshutzerklärung</a>`
+
 ## Plugins
 \* Needed for the websites which will have user functionality  
 \*\* Needed for the websites which will have shop & online selling functionality  
 \*\*\* Needed for restaurant like websites  
-1. Starter Templates | By Brainstorm Force  
-Enables us to import pre-made, pages, blocks etc.
-   
-1. Yoast Duplicate Post | By Enrico Battocchi & Team Yoast  
-To clone Pages etc.
    
 1. \*WooCommerce | By Automattic  
 For shopping purposes
@@ -394,13 +455,6 @@ To print item count and/or price with Cart icon
 1. 404page - your smart custom 404 error page | By Peter Raschendorfer *(Appearance -> 404 Error Page)*  
 To specify 404 Error Page
 
-1. UpdraftPlus - Backup/Restore | By UpdraftPlus.Com, DavidAnderson *(Settings -> UpdraftPlus Backups)*  
-To automatically create backups and restore them in Google Drive etc.
-  
-1. \*\*Checkout Field Editor for WooCommerce | By ThemeHigh *(WooCommerce -> Checkout Form)*  
-Enables us to edit, rearrange and add fields on/onto Checkout page. PS: Also can be used to add accepting AGB and Datenschutzerklärung checkboxes  
-*i.e.* `Ich akzeptiere <a href="/privacy-policy/">Datenshutzerklärung</a>`
-
 1. Loco Translate | By Tim Whitlock  
 To translate everything like Plugins
   
@@ -433,50 +487,6 @@ Helps to change all site's language in one click
 
 1. Easy Updates Manager | By Easy Updates Manager Team *(Dashboard -> Updates Options)*  
 Helps to enable/disable all update options (Wordpress, Core, Theme, Plugins etc.)
-  
-
-1. Forminator  
-    To add MC4WP Subscribe input field into forminator forms, we will edit its php file so that when we enter "mc4wp-subscribe" as a label for a checkbox, it will automatically add the given html element of Newsletter signup by MC4WP...
-    1. Go to `root > wp-content > plugins > forminator > library > fields`
-    1. Edit `multivalue.php`
-    1. Go to line `240`
-    1. Wrap the following part into the `else` section of the if which we will create in the next step
-        ```php
-        $html .= sprintf(
-              '<input type="checkbox" name="%s" value="%s" id="%s" data-calculation="%s" %s />',
-              $name,
-              $value,
-              $input_id,
-              $calculation_value,
-              $selected
-            );
-        ```
-    1. If statement:
-        ```php
-        if ( $label === 'mc4wp-subscribe' ) {
-				$html .= sprintf(
-					'<input type="checkbox" name="mc4wp-subscribe" value="1" id="%s" %s />',
-					$input_id,
-					$selected
-				);
-			} else {
-				$html .= sprintf(
-					'<input type="checkbox" name="%s" value="%s" id="%s" data-calculation="%s" %s />',
-					$name,
-					$value,
-					$input_id,
-					$calculation_value,
-					$selected
-				);
-			}
-        ```
-    1. By doing so, Forminator will detect our label, and create the input checkbox that we (MC4WP Plugin) desire...
-    1. Lastly we need to hide the label *(Assume that we have given `register-form-newsletter` class to the Checkbox during creation in Forminator)*
-        ```css
-        .register-form-newsletter h4 {
-          display: none !important;
-        }
-        ```
 
 ## CSS Breakpoints
 1. Tablet  
