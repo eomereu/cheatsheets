@@ -2,7 +2,7 @@
 ## Theme
 **Astra** is a perfect choice for a clean start.
 
-## Recent Plugins
+## Plugins
 
 1. Starter Templates | By Brainstorm Force  
 Enables us to import pre-made, pages, blocks etc.
@@ -15,9 +15,34 @@ To clone Pages etc.
 
 1. CMP Maintenance Mode Plug-in
 
-1. Ultra Addons
+1. UltraAddons - Elementor Addons by CodeAstrology | by CodeAstrology Team  
+Useful addons:
+    - Hero Slider
 
-1. Premium Addons for Elementor
+1. Premium Addons for Elementor | By Leap13  
+Useful addons:
+    - Woo Products
+
+1. Plugin for Google Reviews | By RichPlugins
+
+1. CookieYes | GDPR Cookie Consent | By CookieYes
+"Cookie Settings" link or button can be injected by adding `cky-banner-element` class to the menu item, button or link.
+i.e.  
+    ```html
+    <a href="#" class="cky-banner-element">Change Cookie Preferences</a>
+    ```
+    or
+    ```html
+    <button class="cky-banner-element">Change Cookie Preferences</button>
+    ```
+    ***PS:** In order to be able to add class to menu elements (in case you want to add "Cookie Settings" Custom Link to Footer Menu), please see the following link: https://sevenspark.com/how-to/how-to-add-a-custom-class-to-a-wordpress-menu-item*  
+    Steps:
+      1. In Appearance > Menus, click the Screen Options tab (at the top of the screen)
+      1. Under Show advanced menu properties, check CSS Classes
+      1. Now expand any menu item to reveal the CSS Classes (optional) text input.
+      1. Enter your class name and save your menu to apply the class to the menu item
+
+1. PDF Invoices & Packing Slips for WooCommerce | By WP Overnight
 
 1. MC4WP: Mailchimp for WordPress | By ibericode
 
@@ -68,7 +93,12 @@ To clone Pages etc.
 Enables us to edit, rearrange and add fields on/onto Checkout page. PS: Also can be used to add accepting AGB and Datenschutzerklärung checkboxes  
 *i.e.* `Ich akzeptiere <a href="/privacy-policy/">Datenshutzerklärung</a>`
 
-## Plugins
+## Websites
+1. https://termly.io/  
+Can be used in order to create "Terms and Conditions", "Privacy Policy" pages and more.  
+***PS:** In order to copy and paste the generated text by translating, use "DeepL" extension on chrome*
+
+## Plugins (Legacy)
 \* Needed for the websites which will have user functionality  
 \*\* Needed for the websites which will have shop & online selling functionality  
 \*\*\* Needed for restaurant like websites  
