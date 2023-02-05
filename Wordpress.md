@@ -9,19 +9,34 @@ Enables us to import pre-made, pages, blocks etc.
 
 1. UpdraftPlus - Backup/Restore | By UpdraftPlus.Com, DavidAnderson *(Settings -> UpdraftPlus Backups)*  
 To automatically create backups and restore them in Google Drive etc.
-   
-1. Yoast Duplicate Post | By Enrico Battocchi & Team Yoast  
-To clone Pages etc.
 
 1. CMP Maintenance Mode Plug-in
 
 1. UltraAddons - Elementor Addons by CodeAstrology | by CodeAstrology Team  
 Useful addons:
     - Hero Slider
+    - Advance Heading
+    - Image Accordion
 
 1. Premium Addons for Elementor | By Leap13  
+PA Duplicator  
 Useful addons:
     - Woo Products
+    - Blog\*
+    - Media Grid (For clickable images)  
+    - Banner
+    - Header
+    <br>  
+    \* May require margin fix:
+      ```css
+      @media screen and (max-width: 1024px) {
+        /* fix unnecessary margin */
+        .premium-blog-wrap.premium-blog-even {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+      }
+      ```
 
 1. Plugin for Google Reviews | By RichPlugins
 
@@ -98,6 +113,47 @@ Enables us to edit, rearrange and add fields on/onto Checkout page. PS: Also can
 Can be used in order to create "Terms and Conditions", "Privacy Policy" pages and more.  
 ***PS:** In order to copy and paste the generated text by translating, use "DeepL" extension on chrome*
 
+## Proposed Stylings
+1. Box Shadow  
+  Blur: 5  
+  Color: rgb(0 0 0 / 17%)  
+  Vertical, Horizontal, Spread: 0  
+    ```css
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 17%);
+    ```
+
+1. Flyout Side Menu Stylings
+    ```css
+    /* fixing hamburger icon */
+    #ast-mobile-header .ast-button-wrap {
+      position: fixed;
+      right: 20px;
+    }
+    /* give border to hamburger menu */
+    button.menu-toggle.main-header-menu-toggle.ast-mobile-menu-trigger-fill {
+        border: 1px solid var(--ast-global-color-2) !important;
+    }
+    /* resizing side menu */
+    .ast-mobile-popup-drawer .ast-mobile-popup-inner {
+      width: 275px !important;
+    }
+    /* resizing and adjusting menu toggle close */
+    .ast-mobile-svg.ast-close-svg {
+      width: 25px;
+      height: 25px;
+      color: rgb(73,75,81);
+    }
+    #menu-toggle-close {
+      padding: 40px 28px 15px 0px !important;
+    }
+    button#wpforms-submit-10 {
+      width: 100%;
+    }
+    div#rc-anchor-container {
+      border-radius: 10px !important;
+    }
+    ```
+
 ## Plugins (Legacy)
 \* Needed for the websites which will have user functionality  
 \*\* Needed for the websites which will have shop & online selling functionality  
@@ -118,6 +174,9 @@ To add custom fields like "pizza-toppings" based on category or product with pri
 1. \*\*ELEX WooCommerce Catalog Mode | By ELEXtensions *(WooCommerce -> Catalog Mode)*  
 To hide "Add to Cart" button on Shop page.
  
+1. Yoast Duplicate Post | By Enrico Battocchi & Team Yoast  
+To clone Pages etc.
+
 1. \*\*WPC Smart Quick View for WooCommerce | By WPClever  
 To add "Quick View" option to products on Shop page
     ```css
