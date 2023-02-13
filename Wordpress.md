@@ -12,11 +12,18 @@ To automatically create backups and restore them in Google Drive etc.
 
 1. CMP Maintenance Mode Plug-in
 
-1. UltraAddons - Elementor Addons by CodeAstrology | by CodeAstrology Team  
+1. UltraAddons - Elementor Addons by CodeAstrology | By CodeAstrology Team  
 Useful addons:
     - Hero Slider
     - Advance Heading
     - Image Accordion
+
+1. Happy Elementor Addons | By weDevs
+Useful addons:
+    - Image Carousel
+    - Flip Box
+    - Slider
+    - Twitter Feed
 
 1. Premium Addons for Elementor | By Leap13  
 PA Duplicator  
@@ -60,6 +67,40 @@ i.e.
 1. PDF Invoices & Packing Slips for WooCommerce | By WP Overnight
 
 1. MC4WP: Mailchimp for WordPress | By ibericode
+
+1. W3 Total Cache | By BoldGrid
+
+1. Gallery Slider for WooCommerce | By ShapedPlugin
+    ```css
+    /* fix height of individual product gallery */
+    a.wcgs-slider-image.slick-slide {
+      height: 60vh;
+      background: white;
+    }
+    a.wcgs-slider-image.slick-slide img {
+      height: 60vh !important;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+    /* remove background of dots of product gallery slider */
+    ul.slick-dots li {
+      background: transparent !important;
+    }
+
+    @media screen and (max-width: 767px) {
+      /* fix height of individual product gallery */
+      a.wcgs-slider-image.slick-slide {
+        height: 70vh;
+      }
+      a.wcgs-slider-image.slick-slide img {
+        height: 70vh !important;
+      }
+      /* prevent the meaningless bug of its own */
+      div.slick-list div.slick-track {
+        width: max-content !important;
+      }
+    }
+    ```
 
 1. Forminator  
     To add MC4WP Subscribe input field into forminator forms, we will edit its php file so that when we enter "mc4wp-subscribe" as a label for a checkbox, it will automatically add the given html element of Newsletter signup by MC4WP...
