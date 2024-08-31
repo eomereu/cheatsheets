@@ -195,6 +195,34 @@ Can be used in order to create "Terms and Conditions", "Privacy Policy" pages an
     }
     ```
 
+## Functionalities
+Disable Add to Cart button based on a radio button selection:
+```php
+function custom_disable_add_to_cart() {
+    ?>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // Listen for changes to the radio buttons within the div with id "radio_5632017274"
+        $('#radio_5632017274 input[type="radio"]').change(function() {
+            // Check if the "Ja" (Yes) option is selected
+            var isJaSelected = $('#radio_5632017274 input[type="radio"]:checked').val().toLowerCase() === "ja";
+
+            // If "Ja" is selected, disable the Add to Cart button
+            if (isJaSelected) {
+                $('.single_add_to_cart_button').prop('disabled', true);
+            } else {
+                // If "Nein" is selected, enable the Add to Cart button
+                $('.single_add_to_cart_button').prop('disabled', false);
+            }
+        });
+    });
+    </script>
+    <?php
+}
+
+add_action('wp_footer', 'custom_disable_add_to_cart');
+```
+
 ## Plugins (Legacy)
 \* Needed for the websites which will have user functionality  
 \*\* Needed for the websites which will have shop & online selling functionality  
